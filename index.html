@@ -467,7 +467,12 @@
                     ></span>
                     <span
                       ><strong class="text-white">Phone:</strong>
-                      +989134580952</span
+                      <span
+                        id="phone-short"
+                        class="cursor-pointer"
+                        onclick="copyPhone()"
+                        >+989134580952</span
+                      ></span
                     >
                   </li>
                 </ul>
@@ -1111,7 +1116,9 @@
                 </div>
                 <div>
                   <p class="text-slate-400 mb-1">Email</p>
-                  <p class="text-white cursor-pointer" onclick="copyEmail()">mohammad.cha..</p>
+                  <p class="text-white cursor-pointer" onclick="copyEmail()">
+                    mohammad.cha..
+                  </p>
                 </div>
               </div>
               <div class="flex items-start mb-6">
@@ -1298,7 +1305,13 @@
                   mohammad.chavoshipor@gmail.com</span
                 >
                 <span class="flex items-center"
-                  ><i class="fas fa-phone mr-2"></i> 1989134580952</span
+                  ><i class="fas fa-phone mr-2"></i>
+                  <span
+                    id="phone-short"
+                    class="cursor-pointer"
+                    onclick="copyPhone()"
+                    >+989134580952</span
+                  ></span
                 >
                 <span class="flex items-center"
                   ><i class="fas fa-map-marker-alt mr-2"></i> Kashan, Iran</span
@@ -1709,6 +1722,16 @@
       </div>
     </div>
     <script>
+      function copyPhone() {
+        const phone = "+989134580952";
+        navigator.clipboard.writeText(phone).then(() => {
+          Swal.fire({
+            title: "Phone Copied",
+            text: "Phone copied to clipboard",
+            icon: "success",
+          });
+        });
+      }
       function copyEmail() {
         const email = "mohammad.chavoshipor@gmail.com";
         navigator.clipboard.writeText(email).then(() => {
